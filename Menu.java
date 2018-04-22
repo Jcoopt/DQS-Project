@@ -1,6 +1,7 @@
 //Joshua Tucker
 //c1739307
 //Adapted from PhoneBookTest.java
+import java.util.Arrays;
 import java.util.Scanner;
 import java.io.*;
 
@@ -19,7 +20,9 @@ while (true) {
   System.out.println("3.Show questions by topic");
   System.out.println("4.Delete question");
   System.out.println("5.Save questions");
-  System.out.println("6.Exit");
+    System.out.println("6.Load Question");
+  System.out.println("7.Exit");
+  ;
 
 
     Scanner in = new Scanner(System.in);
@@ -56,9 +59,18 @@ while (true) {
         break;
 
         case 6:
+            System.out.println("What is the name of the file you want to load?");
+           // String file_name = in.nextLine();
+            String file_name = "testQ.txt";
+            loadQuestions(file_name,qb);
+            break;
+
+        case 7:
         //6.Exit
         System.exit(0);
         break;
+
+
 
       }
 
@@ -75,6 +87,29 @@ while (true) {
 
     //return results
     return (qb.searchQuestions( 5, pattern ));
+  }
+  public static void loadQuestions(String file_name, QuestionBank qb){
+
+
+      try { //method adapted from lab and taught session exercises
+          System.out.println("read file");
+          Scanner input_file_handler = new Scanner(new File(file_name));
+
+          while (input_file_handler.hasNextLine()) {
+
+              String line_from_file = input_file_handler.nextLine();
+              String[] split_line = line_from_file.split(",");
+              addQuestion(split_line, qb);
+              System.out.println("file read");
+
+             /*System.out.println(Arrays.asList(split_line));
+              StudentsList.add(new Student(Arrays.asList(split_line)));*/
+          }
+          input_file_handler.close();
+      } catch (Exception e) {
+          e.printStackTrace();
+          System.out.println("Problem reading file: " + file_name + ". Are you sure it exists?");
+      }
   }
 
   public static void addQuestion( String[] questionInput, QuestionBank qb ) {

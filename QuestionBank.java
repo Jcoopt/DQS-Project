@@ -14,15 +14,33 @@ public class QuestionBank implements Serializable {
     }
 
 	public void add( String questionText, String answer1, String answer2, String answer3, String answer4, String correctAnswer, String topic ) {
-		//add new student to studentEntries vector
+		//for adding a question for which statistics do not exist i.e. when user inputs a new question
 		questionBank.add(new Question(
-		questionText,
-		answer1,
-		answer2,
-		answer3,
-		answer4,
-		correctAnswer,
-		topic));
+				questionText,
+				answer1,
+				answer2,
+				answer3,
+				answer4,
+				correctAnswer,
+				topic,
+				"0",//Statistics counters are set to 0 on a newly added question as they have yet to be asked
+				"0",
+				"0"));
+	}
+	public void add( String questionText, String answer1, String answer2, String answer3, String answer4,
+					 String correctAnswer, String topic,String timesAsked,String timesCorrect, String timesWrong ) {
+		//for adding a question for which statistics exist i.e. when loading from a file
+		questionBank.add(new Question(
+				questionText,
+				answer1,
+				answer2,
+				answer3,
+				answer4,
+				correctAnswer,
+				topic,
+				timesAsked,//Statistics counters are set to the stored value
+				timesCorrect,
+				timesWrong));
 	}
 
 	public void delete( int position ) {

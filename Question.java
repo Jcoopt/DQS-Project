@@ -6,7 +6,7 @@ import java.util.Vector;
 import java.io.*;
 class Question implements Serializable {
 
-  private String[] details = new String[7];
+  private String[] details = new String[10];
   private Vector<Float> answerTimes;
 
   public Question(
@@ -100,8 +100,8 @@ class Question implements Serializable {
     + "\nTopic: " + details[5]
     + "\nCorrect answer" + details[6]
     + "\nTimes Asked: " + details[7]
-    + "\nTimes Correct" + details[8]
-    + "\nTimes Wrong" + details[9]);
+    + "\nTimes Correct: " + details[8]
+    + "\nTimes Wrong: " + details[9]);
   }
 
 }
