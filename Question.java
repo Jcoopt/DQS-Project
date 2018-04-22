@@ -16,7 +16,10 @@ class Question implements Serializable {
     String answer3,
     String answer4,
     String correctAnswer,
-    String topic ) {
+    String topic,
+    String timesAsked,
+    String timesCorrect,
+    String timesWrong) {
 
     details[0] = questionText;
     details[1] = answer1;
@@ -25,6 +28,9 @@ class Question implements Serializable {
     details[4] = answer4;
     details[5] = correctAnswer;
     details[6] = topic;
+    details[7] = timesAsked;
+    details[8] = timesCorrect;
+    details[9] = timesWrong;
 
   }
 
@@ -69,8 +75,19 @@ class Question implements Serializable {
   }
 
   public String getTopic( ) {
-    return details[6];
-  }
+        return details[6];
+    }
+
+    public String getTimesAsked( ) {
+        return details[7];
+    }
+
+    public String getTimeCorrect( ) {
+        return details[8];
+    }
+    public String getTimesWrong( ) {
+        return details[9];
+    }
 
 
 
@@ -81,7 +98,10 @@ class Question implements Serializable {
     +"\n\t3." + details[3]
     +"\n\t4." + details[4]
     + "\nTopic: " + details[5]
-     + "\nCorrect answer" + details[6]);
+    + "\nCorrect answer" + details[6]
+    + "\nTimes Asked: " + details[7]
+    + "\nTimes Correct" + details[8]
+    + "\nTimes Wrong" + details[9]);
   }
 
 }
