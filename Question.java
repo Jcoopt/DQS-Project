@@ -2,11 +2,12 @@
 //c1739307
 //Adapted from PhoneBook.java from Week3
 //Holds and returns data on a single student
-
+import java.util.Vector;
 import java.io.*;
 class Question implements Serializable {
 
   private String[] details = new String[7];
+  private Vector<Float> answerTimes;
 
   public Question(
     String questionText,
@@ -25,6 +26,18 @@ class Question implements Serializable {
     details[5] = correctAnswer;
     details[6] = topic;
 
+  }
+
+  public Float getAvTime( ) {
+  Float avAnswerTime = 0.0F;
+    for (int i = 0; i >= answerTimes.size(); ++i) {
+      avAnswerTime += answerTimes.get(i);
+    }
+    return (avAnswerTime / answerTimes.size());
+  }
+
+  public void updateTime( Float newTime ) {
+    answerTimes.add(newTime);
   }
 
   public String getDetail( int index ) {

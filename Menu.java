@@ -31,15 +31,7 @@ while (true) {
         //1.Add new question
         QuestionEntry qe = new QuestionEntry();
         String questionInput[] = qe.newEntry();
-        qb.add(
-        questionInput[0],
-        questionInput[1],
-        questionInput[2],
-        questionInput[3],
-        questionInput[4],
-        questionInput[5],
-        questionInput[6]
-        );
+        addQuestion(questionInput, qb);
         break;
 
         case 2:
@@ -85,4 +77,15 @@ while (true) {
     return (qb.searchQuestions( 5, pattern ));
   }
 
+  public static void addQuestion( String[] questionInput, QuestionBank qb ) {
+    qb.add(
+    questionInput[0],
+    questionInput[1],
+    questionInput[2],
+    questionInput[3],
+    questionInput[4],
+    questionInput[5],
+    questionInput[6]
+    );
+  }
 }
