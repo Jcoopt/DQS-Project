@@ -8,7 +8,7 @@ public class Quiz {
 
   public static Vector<Question> qb = new Vector<Question>();
 
-  public static void startQuiz( QuestionBank inBank, String topic ){
+  public static void startQuiz( QuestionBank inBank){
     int QuestionCounter = 0;
     int Score = 0;
     System.out.println( inBank.length() );

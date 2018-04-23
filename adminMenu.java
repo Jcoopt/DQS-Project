@@ -91,7 +91,7 @@ public class adminMenu {
             System.out.println("Please enter the topic of the quiz");
             String topic = id.nextLine();
             Quiz q = new Quiz();
-            q.startQuiz(qb, topic);
+            q.startQuiz(qb);
             System.out.println("-------------------------------");
             break;
 

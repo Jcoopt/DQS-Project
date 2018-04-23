@@ -52,10 +52,10 @@ public class studentMenu {
                     //1.Start quiz
                     System.out.println("-------------------------------");
                     Scanner id = new Scanner(System.in);
-                    System.out.println("Please enter the topic of the quiz");
-                    String topic = id.nextLine();
+                    //System.out.println("Please enter the topic of the quiz");
+                    //String topic = id.nextLine();
                     Quiz q = new Quiz();
-                    q.startQuiz(qb, topic);
+                    q.startQuiz(qb);
                     System.out.println("-------------------------------");
                     break;
 
