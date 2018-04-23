@@ -97,11 +97,14 @@ public class adminMenu {
             case 8:
                 System.out.println("How many schools are attending?");
                 String schoolNumb = in.nextLine();
-                for ( int i = 0; i < IntegerschoolNumb; ++i) {
-                    System.out.println("" + i + "." + qb.getQuestion(i).getQuestionText());
+                String[] schoolList=new String[Integer.parseInt(schoolNumb)];
+                for ( int i = 1; i <= Integer.parseInt(schoolNumb); ++i) {
+                    System.out.println("Please give the name of school number "+i);
+                    String schoolNameTemp = in.nextLine();
+                    schoolList[i-1]=schoolNameTemp;//GIVE THIS TO THE QUIZ THING
                 }
                 studentMenu studentQuiz= new studentMenu();
-                studentQuiz.infoMenu();
+                studentQuiz.infoMenu(schoolList);
                 break;
 
             case 9:
@@ -122,15 +125,17 @@ public class adminMenu {
                 else if(qToChange<=numberOfQs){
                     System.out.println("What should the question text say??");
                     String qText=in.nextLine();
-                    System.out.println("What should answer A be?");
+                    System.out.println("What should answer 1 be?");
                     String aAText= in.nextLine();
-                    System.out.println("What should answer B be?");
+                    System.out.println("What should answer 2 be?");
                     String aBText=in.nextLine();
-                    System.out.println("What should answer C be?");
+                    System.out.println("What should answer 3 be?");
                     String aCText=in.nextLine();
-                    System.out.println("What should answer D be?");
+                    System.out.println("What should answer 4 be?");
                     String aDText=in.nextLine();
-                    qb.getQuestion(qToChange).EditQuestion(qText,aAText,aBText,aCText,aDText);
+                    System.out.println("What answer is correct 1,2,3,4?");
+                    String aCorrectText=in.nextLine();
+                    qb.getQuestion(qToChange).EditQuestion(qText,aAText,aBText,aCText,aDText,aCorrectText);
                     qb.saveBank();
                 }
 

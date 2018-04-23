@@ -7,12 +7,15 @@ public class studentMenu {
 //Adapted from PhoneBookTest.java
 
 
-    public static void infoMenu( ) {
+    public static void infoMenu(String[] schoolList  ) {
         StudentBank sb = new StudentBank();
         loadStudents("students.txt",sb);
         while (true){
           Scanner in = new Scanner(System.in);
         System.out.println("Hi! What school are you from?");
+        for (int i=0;i<schoolList.length;i++){
+            System.out.print();
+        }
         String school = in.nextLine();
 
         boolean running=true;
@@ -25,19 +28,20 @@ public class studentMenu {
         String name = in.nextLine();
         System.out.println("Whats your student number");
         String number = in.nextLine();
-        Student inStudent = new Student(name, number, school);
+        Student inStudent = new Student(number, school);
         sb.add(inStudent);
         loadMenu();
         }
 
     }
 
-    public static boolean loadMenu( ) {
+    public static boolean loadMenu() {
 
         QuestionBank qb = new QuestionBank();
         adminMenu.loadQuestions("testQ.txt",qb);
         boolean running=true;
         while (true) {
+
             //display main menu
 
             System.out.println("1.Start quiz");
@@ -95,7 +99,7 @@ public class studentMenu {
     }
 
     public static void addStudent( String[] studentInput, StudentBank sb ) {
-      Student inStudent = new Student(studentInput[0], studentInput[1], studentInput[2]);
+      Student inStudent = new Student( studentInput[1], studentInput[2]);
       sb.add(inStudent);
 
     }
