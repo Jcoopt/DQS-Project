@@ -15,7 +15,7 @@ public class Quiz {
     int n = inBank.length();
 
     for ( int i = 0; i < n; ++i) {
-      if ((""+inBank.getQuestion(i).getTopic())==setTopic|| setTopic==""){
+      if ( setTopic.equals("")|| inBank.getQuestion(i).getTopic().equals(setTopic)){
         displayQuestion(inBank.getQuestion(i));
         inBank.getQuestion(i).setTimesAsked(1);
         int answer = inputAnswer();
