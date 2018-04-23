@@ -103,7 +103,7 @@ public class adminMenu {
             Statistics studentStats = new Statistics();
             Statistics.menu(qb, sb);
             case 10:
-                System.out.println("Which question would ypu like to edit?");
+                System.out.println("Which question would you like to edit?");
                 int n = qb.length();
 
                 for ( int i = 0; i < n; ++i) {
