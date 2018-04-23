@@ -97,7 +97,7 @@ public class adminMenu {
             case 8:
                 System.out.println("How many schools are attending?");
                 String schoolNumb = in.nextLine();
-                for ( int i = 0; i < schoolNumb; ++i) {
+                for ( int i = 0; i < IntegerschoolNumb; ++i) {
                     System.out.println("" + i + "." + qb.getQuestion(i).getQuestionText());
                 }
                 studentMenu studentQuiz= new studentMenu();
@@ -111,7 +111,7 @@ public class adminMenu {
                 System.out.println("Which question would you like to edit? Enter 0 to exit");
                 int numberOfQs = qb.length();
 
-                for ( int i = 1; i < n; ++i) {
+                for ( int i = 1; i < numberOfQs; ++i) {
                     System.out.println("" + i + "." + qb.getQuestion(i).getQuestionText());
                 }
                 int qToChange = in.nextInt();
