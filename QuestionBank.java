@@ -73,7 +73,23 @@ public class QuestionBank implements Serializable {
 		}
 
 	}
+	public void saveBank(){
+    	StringBuffer temp= new StringBuffer();
 
+		for (int i = 0; i < questionBank.size(); ++i) {
+			temp.append( questionBank.get(i).getQuestionFileSafe() + "\n" );
+		}
+		try {//method adapted from lab and taught session exercises
+			BufferedWriter file_handler = new BufferedWriter(new FileWriter(new File("testQ.txt")));
+			file_handler.write(temp.toString());
+
+			file_handler.flush();
+			file_handler.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Problem reading file");
+		}
+	}
 	public String toString() {
 		//appends to toStrings of all the student objects int he vector
 		//Taken from week3 PhoneBook example

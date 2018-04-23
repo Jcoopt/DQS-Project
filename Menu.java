@@ -54,6 +54,7 @@ while (true) {
         break;
 
         case 5:
+            qb.saveBank();
         //5.Save Questions
 
         break;

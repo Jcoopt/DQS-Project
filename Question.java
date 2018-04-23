@@ -89,9 +89,22 @@ class Question implements Serializable {
         return details[9];
     }
 
+    public String getQuestionFileSafe() {
+      String  temp="";
+      temp+= details[0]
+              +", " + details[1]
+              +", " + details[2]
+              +", " + details[3]
+              +", " + details[4]
+              + ", " + details[5]
+              + ", " + details[6]
+              + ", " + details[7]
+              + ", " + details[8]
+              + ", " + details[9];
+      return temp;
+    }
 
-
-  public String toString( ) {
+    public String toString( ) {
     return(details[0]
     +"\n\t1." + details[1]
     +"\n\t2." + details[2]
