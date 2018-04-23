@@ -8,15 +8,20 @@ public class studentMenu {
 
 
     public static void infoMenu( ) {
+        StudentBank sb = new StudentBank();
+        loadQuestions("students.txt",sb);
         while (true){
+          Scanner in = new Scanner(System.in);
         System.out.println("Hi! What school are you from?");
-        Scanner in = new Scanner(System.in);
         String school = in.nextLine();
-        boolean running=true;
-        while (running) {
-            running=loadMenu();
-        }
-        System.exit(0);
+        System.out.println("What is your name?");
+        String name = in.nextLine();
+        System.out.println("Whats your student number");
+        String number = in.nextLine();
+        Student inStudent = new Student(name, number, school);
+        sb.add(inStudent);
+        loadMenu();
+
         }
 
     }
@@ -60,6 +65,32 @@ public class studentMenu {
         return running;
     }
 
+    public static void loadQuestions(String file_name, StudentBank sb){
+
+        try { //method adapted from lab and taught session exercises
+            System.out.println("Loading Questions\n\n");
+            Scanner input_file_handler = new Scanner(new File(file_name));
+
+            while (input_file_handler.hasNextLine()) {
+
+                String line_from_file = input_file_handler.nextLine();
+                String[] split_line = line_from_file.split(",");
+                addStudent(split_line, sb);
+               // System.out.println("file read");
+
+               /*System.out.println(Arrays.asList(split_line));
+                StudentsList.add(new Student(Arrays.asList(split_line)));*/
+            }
+            input_file_handler.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Problem reading file: " + file_name + ". Are you sure it exists?");
+        }
+    }
+
+    public static void addStudent( String[] studentInput, StudentBank sb ) {
+      Student inStudent = new Student(studentInput[0], studentInput[1], studentInput[2]);
+      sb.add(inStudent);
+      
+    }
 }
-
-
