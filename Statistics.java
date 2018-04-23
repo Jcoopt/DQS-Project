@@ -34,13 +34,26 @@ public class Statistics implements Serializable
     {
       //Displays average time taken for chosen student
       qb.getQuestion(choice) ;
-      System.out.println("Average time taken to answer : \n"
-      + qb.getQuestion(choice).getAvTime());
+      System.out.println("Times asked : \n"
+      + qb.getQuestion(choice).getTimesAsked()
+      + "\n"
+      +"Times answered correctly : \n"
+      + qb.getQuestion(choice).getTimeCorrect()
+      + "\n"
+      +"Times answered incorrectly : \n"
+      + qb.getQuestion(choice).getTimesWrong()
+      + "\n"
+      +"Times exited : \n"
+      + qb.getQuestion(choice).getTimesExited()) ;
+      adminMenu.loadMenu();
+
 
     }
     catch(Exception e)
     {
-      System.out.println("Invalid") ;
+
+      System.out.println(e) ;
+      adminMenu.loadMenu();
     }
 
 
@@ -58,10 +71,12 @@ public class Statistics implements Serializable
     {
 
       System.out.println(sb.get(choice).infoString()) ;
+      adminMenu.loadMenu();
     }
     catch(Exception e)
     {
       System.out.println("Invalid");
+      adminMenu.loadMenu();
     }
   }
 
