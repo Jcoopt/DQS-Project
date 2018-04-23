@@ -9,7 +9,7 @@ public class studentMenu {
 
     public static void infoMenu( ) {
         StudentBank sb = new StudentBank();
-        loadQuestions("students.txt",sb);
+        loadStudents("students.txt",sb);
         while (true){
           Scanner in = new Scanner(System.in);
         System.out.println("Hi! What school are you from?");
@@ -62,7 +62,7 @@ public class studentMenu {
         }
     }
 
-    public static void loadQuestions(String file_name, StudentBank sb){
+    public static void loadStudents(String file_name, StudentBank sb){
 
         try { //method adapted from lab and taught session exercises
             System.out.println("Loading Questions\n\n");
@@ -88,6 +88,6 @@ public class studentMenu {
     public static void addStudent( String[] studentInput, StudentBank sb ) {
       Student inStudent = new Student(studentInput[0], studentInput[1], studentInput[2]);
       sb.add(inStudent);
-      
+
     }
 }

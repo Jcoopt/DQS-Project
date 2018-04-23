@@ -8,9 +8,12 @@ import java.io.*;
 public class adminMenu {
 
   public static void loadMenu( ) {
+    StudentBank sb = new StudentBank();
+    loadStudents("students.txt",sb);
 
     QuestionBank qb = new QuestionBank();
-loadQuestions("testQ.txt",qb);
+    loadQuestions("testQ.txt",qb);
+
 
     while (true) {
       //display main menu
@@ -23,7 +26,8 @@ loadQuestions("testQ.txt",qb);
       System.out.println("6.Load Question");
       System.out.println("7.Start quiz");
       System.out.println("8.Start quiz for students");
-      System.out.println("9.Exit");
+      System.out.println("9.View Statistics");
+      System.out.println("10.Exit");
       ;
 
 
@@ -95,7 +99,11 @@ loadQuestions("testQ.txt",qb);
                 studentMenu studentQuiz= new studentMenu();
                 studentQuiz.infoMenu();
                 break;
+
             case 9:
+            Statistics studentStats = new Statistics();
+            Statistics.menu(qb, sb);
+            case 10:
             //8.Exit
             System.exit(0);
             break;
@@ -137,6 +145,29 @@ loadQuestions("testQ.txt",qb);
       }
   }
 
+  public static void loadStudents(String file_name, StudentBank sb){
+
+      try { //method adapted from lab and taught session exercises
+          System.out.println("Loading Questions\n\n");
+          Scanner input_file_handler = new Scanner(new File(file_name));
+
+          while (input_file_handler.hasNextLine()) {
+
+              String line_from_file = input_file_handler.nextLine();
+              String[] split_line = line_from_file.split(",");
+              addStudent(split_line, sb);
+             // System.out.println("file read");
+
+             /*System.out.println(Arrays.asList(split_line));
+              StudentsList.add(new Student(Arrays.asList(split_line)));*/
+          }
+          input_file_handler.close();
+      } catch (Exception e) {
+          e.printStackTrace();
+          System.out.println("Problem reading file: " + file_name + ". Are you sure it exists?");
+      }
+  }
+
   public static void addQuestion( String[] questionInput, QuestionBank qb ) {
     qb.add(
     questionInput[0],
@@ -147,5 +178,11 @@ loadQuestions("testQ.txt",qb);
     questionInput[5],
     questionInput[6]
     );
+  }
+
+  public static void addStudent( String[] studentInput, StudentBank sb ) {
+    Student inStudent = new Student(studentInput[0], studentInput[1], studentInput[2]);
+    sb.add(inStudent);
+
   }
 }

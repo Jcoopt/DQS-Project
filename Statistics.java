@@ -26,7 +26,7 @@ public class Statistics implements Serializable
     System.out.println("Choose question to view data of:");
     for(int i = 0; i != qb.length(); i++)
       {
-        System.out.println(qb.getQuestion(i).getQuestionText() + i);
+        System.out.println(i + ": " + qb.getQuestion(i).getQuestionText());
       }
     Scanner in = new Scanner( System.in );
     int choice = in.nextInt();
