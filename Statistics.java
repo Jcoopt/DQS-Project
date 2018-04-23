@@ -6,7 +6,7 @@ import java.io.*;
 public class Statistics implements Serializable
 {
   //Menu which allows user to choose between viewing question data and student data
-  public static void menu()
+  public static void menu( QuestionBank qb, StudentBank sb )
     {
       System.out.println("Options: \n" + "View student data : 1 \n" + "View question data : 2") ;
       Scanner in = new Scanner( System.in ) ;
@@ -26,16 +26,16 @@ public class Statistics implements Serializable
     System.out.println("Choose question to view data of:");
     for(int i = 0; i != qb.length(); i++)
       {
-        System.out.println(qb.get(i).getQuestionText() + i);
+        System.out.println(qb.getQuestion(i).getQuestionText() + i);
       }
     Scanner in = new Scanner( System.in );
     int choice = in.nextInt();
     try
     {
       //Displays average time taken for chosen student
-      qb.get(choice) ;
+      qb.getQuestion(choice) ;
       System.out.println("Average time taken to answer : \n"
-      + qb.get(choice).getAvTime());
+      + qb.getQuestion(choice).getAvTime());
 
     }
     catch(Exception e)

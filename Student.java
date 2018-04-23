@@ -1,17 +1,19 @@
 public class Student
 {
+  String school;
   String name;
   String studentNumber;
   int questionsAnswered;
   int correctAnswers;
   int incorrectAnswers;
 
-  public Student(String name, String studentNumber)
+  public Student(String name, String studentNumber, String school)
     {
-      this.studentNumber = studentNumber ;
+      this.school = school;
+      this.studentNumber = studentNumber;
       this.name = name;
-      this.questionsAnswered = 0 ;
-      this.incorrectAnswers = 0 ;
+      this.questionsAnswered = 0;
+      this.incorrectAnswers = 0;
     }
 
     public String getName()
@@ -29,7 +31,7 @@ public class Student
         this.questionsAnswered += num ;
         this.incorrectAnswers += num ;
       }
-    public void correct(nt num)
+    public void correct(int num)
       {
         this.questionsAnswered += num ;
         this.correctAnswers += num ;
