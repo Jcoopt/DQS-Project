@@ -19,14 +19,13 @@ public class Quiz {
       if (checkAnswer(inputAnswer(), Integer.parseInt(inBank.getQuestion(i).getCorrectAnswer()))) {
         Score += 1;
         System.out.println("correct");
-        inBank.inCorrect(1);
+        inBank.getQuestion(i).inCorrect(1);
       } else {
         System.out.println("incorrect");
-        inBank.inWrong(1);
+        inBank.getQuestion(i).inWrong(1);
       }
-
     }
-
+    endQuiz( QuestionCounter, Score );
   }
 
   public static void displayQuestion( Question q ) {
@@ -48,6 +47,10 @@ public class Quiz {
       return false;
     }
 
+  }
+
+  public static void endQuiz( int QuestionCount, int Score ) {
+    System.out.println("You scored " + Score + "/" + QuestionCount);
   }
 
 

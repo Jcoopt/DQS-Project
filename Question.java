@@ -97,9 +97,6 @@ class Question implements Serializable {
       details[9] += modifier;
     }
 
-
-
-
     public String getQuestionFileSafe() {
       String  temp="";
       temp+= details[0]
@@ -107,11 +104,11 @@ class Question implements Serializable {
               +", " + details[2]
               +", " + details[3]
               +", " + details[4]
-              + ", " + details[5]
-              + ", " + details[6]
-              + ", " + details[7]
-              + ", " + details[8]
-              + ", " + details[9];
+              +", " + details[5]
+              +", " + details[6]
+              +", " + details[7]
+              +", " + details[8]
+              +", " + details[9];
       return temp;
     }
 

@@ -7,87 +7,83 @@ import java.io.*;
 
 public class Menu {
 
-  public static void main( String[] args ) {
+  public static void loadMenu( ) {
 
-    QuestionBank qb = new QuestionBank();
-
-
-while (true) {
-  //display main menu
-  System.out.println("Options:");
-  System.out.println("1.Add new question");
-  System.out.println("2.Display all questions");
-  System.out.println("3.Show questions by topic");
-  System.out.println("4.Delete question");
-  System.out.println("5.Save questions");
-  System.out.println("6.Load Question");
-  System.out.println("7.Start quiz");
-  System.out.println("8.Exit");
-  ;
+        QuestionBank qb = new QuestionBank();
 
 
-    Scanner in = new Scanner(System.in);
-    int option = in.nextInt();
-    String monthString;
-    switch (option) {
+    while (true) {
+      //display main menu
+      System.out.println("Options:");
+      System.out.println("1.Add new question");
+      System.out.println("2.Display all questions");
+      System.out.println("3.Show questions by topic");
+      System.out.println("4.Delete question");
+      System.out.println("5.Save questions");
+      System.out.println("6.Load Question");
+      System.out.println("7.Start quiz");
+      System.out.println("8.Exit");
+      ;
 
-        case 1:
-        //1.Add new question
-        QuestionEntry qe = new QuestionEntry();
-        String questionInput[] = qe.newEntry();
-        addQuestion(questionInput, qb);
-        break;
 
-        case 2:
-        //2.Display all questions
-        System.out.println(qb);
-        break;
+        Scanner in = new Scanner(System.in);
+        int option = in.nextInt();
+        String monthString;
+        switch (option) {
 
-        case 3:
-        //3.Search for students by topic
-        System.out.println(getSearch(qb));
-        break;
-
-        case 4:
-        //4.Delete student
-        System.out.println("Enter number of record to Delete: ");
-        qb.delete(in.nextInt());
-        break;
-
-        case 5:
-            qb.saveBank();
-        //5.Save Questions
-
-        break;
-
-        case 6:
-            System.out.println("What is the name of the file you want to load?");
-           // String file_name = in.nextLine();
-            String file_name = "testQ.txt";
-            loadQuestions(file_name,qb);
+            case 1:
+            //1.Add new question
+            QuestionEntry qe = new QuestionEntry();
+            String questionInput[] = qe.newEntry();
+            addQuestion(questionInput, qb);
             break;
 
-        case 7:
-        //7.Start quiz
-        Scanner id = new Scanner(System.in);
-        System.out.println("Please enter the topic of the quiz");
-        String topic = id.nextLine();
-        Quiz q = new Quiz();
-        q.startQuiz(qb, topic);
-        break;
+            case 2:
+            //2.Display all questions
+            System.out.println(qb);
+            break;
 
-        case 8:
-        //8.Exit
-        System.exit(0);
-        break;
+            case 3:
+            //3.Search for students by topic
+            System.out.println(getSearch(qb));
+            break;
 
+            case 4:
+            //4.Delete student
+            System.out.println("Enter number of record to Delete: ");
+            qb.delete(in.nextInt());
+            break;
 
+            case 5:
+                qb.saveBank();
+            //5.Save Questions
 
-      }
+            break;
 
-    }
+            case 6:
+                System.out.println("What is the name of the file you want to load?");
+               // String file_name = in.nextLine();
+                String file_name = "testQ.txt";
+                loadQuestions(file_name,qb);
+                break;
 
+            case 7:
+            //7.Start quiz
+            Scanner id = new Scanner(System.in);
+            System.out.println("Please enter the topic of the quiz");
+            String topic = id.nextLine();
+            Quiz q = new Quiz();
+            q.startQuiz(qb, topic);
+            break;
+
+            case 8:
+            //8.Exit
+            System.exit(0);
+            break;
+          }
+        }
   }
+
 
   public static String getSearch( QuestionBank qb ) {
 
@@ -100,7 +96,6 @@ while (true) {
     return (qb.searchQuestions( 5, pattern ));
   }
   public static void loadQuestions(String file_name, QuestionBank qb){
-
 
       try { //method adapted from lab and taught session exercises
           System.out.println("read file");
