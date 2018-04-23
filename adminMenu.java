@@ -22,7 +22,8 @@ loadQuestions("testQ.txt",qb);
       System.out.println("5.Save questions");
       System.out.println("6.Load Question");
       System.out.println("7.Start quiz");
-      System.out.println("8.Exit");
+      System.out.println("8.Start quiz for students");
+      System.out.println("9.Exit");
       ;
 
 
@@ -91,6 +92,10 @@ loadQuestions("testQ.txt",qb);
             break;
 
             case 8:
+                studentMenu studentQuiz= new studentMenu();
+                studentQuiz.infoMenu();
+                break;
+            case 9:
             //8.Exit
             System.exit(0);
             break;
@@ -112,7 +117,7 @@ loadQuestions("testQ.txt",qb);
   public static void loadQuestions(String file_name, QuestionBank qb){
 
       try { //method adapted from lab and taught session exercises
-          System.out.println("read file");
+          System.out.println("Loading Questions");
           Scanner input_file_handler = new Scanner(new File(file_name));
 
           while (input_file_handler.hasNextLine()) {
@@ -120,7 +125,7 @@ loadQuestions("testQ.txt",qb);
               String line_from_file = input_file_handler.nextLine();
               String[] split_line = line_from_file.split(",");
               addQuestion(split_line, qb);
-              System.out.println("file read");
+             // System.out.println("file read");
 
              /*System.out.println(Arrays.asList(split_line));
               StudentsList.add(new Student(Arrays.asList(split_line)));*/
