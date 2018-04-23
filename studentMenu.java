@@ -14,6 +14,13 @@ public class studentMenu {
           Scanner in = new Scanner(System.in);
         System.out.println("Hi! What school are you from?");
         String school = in.nextLine();
+
+        boolean running=true;
+        while (running) {
+            running=loadMenu();
+        }
+        System.exit(0);
+
         System.out.println("What is your name?");
         String name = in.nextLine();
         System.out.println("Whats your student number");
@@ -21,7 +28,6 @@ public class studentMenu {
         Student inStudent = new Student(name, number, school);
         sb.add(inStudent);
         loadMenu();
-
         }
 
     }
