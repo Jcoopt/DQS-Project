@@ -1,2 +1,1 @@
-whats the capital of Somerset,Taunton,Wellington,Bristol,Bridgewater,1,capitals,0,0,0
-which of these is a colour,dog,cat,yellow,apple,3,capitals,0,0,0
+whats the first number of the alphabet,a,b,c,d,1,capitals,0,0,0
