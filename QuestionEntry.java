@@ -7,8 +7,6 @@ import java.util.regex.Pattern;
 import java.util.Scanner;
 public class QuestionEntry {
 
-
-
   public static String[] newEntry ( ) {
 
     String quesitonpattern = "([a-zA-Z0-9]+\\s*)+";

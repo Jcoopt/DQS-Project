@@ -20,8 +20,9 @@ while (true) {
   System.out.println("3.Show questions by topic");
   System.out.println("4.Delete question");
   System.out.println("5.Save questions");
-    System.out.println("6.Load Question");
-  System.out.println("7.Exit");
+  System.out.println("6.Load Question");
+  System.out.println("7.Start quiz");
+  System.out.println("8.Exit");
   ;
 
 
@@ -67,7 +68,16 @@ while (true) {
             break;
 
         case 7:
-        //6.Exit
+        //7.Start quiz
+        Scanner id = new Scanner(System.in);
+        System.out.println("Please enter the topic of the quiz");
+        String topic = id.nextLine();
+        Quiz q = new Quiz( qb, topic );
+        q.startQuiz();
+        break;
+
+        case 8:
+        //8.Exit
         System.exit(0);
         break;
 

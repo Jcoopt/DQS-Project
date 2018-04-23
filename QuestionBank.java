@@ -113,4 +113,12 @@ public class QuestionBank implements Serializable {
 
 	}
 
+	public Question getQuestion( int index ) {
+		return questionBank.get(index);
+	}
+
+	public int length( ) {
+		return questionBank.size();
+	}
+
 	}
