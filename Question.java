@@ -129,9 +129,9 @@ class Question implements Serializable {
               +"," + details[4]
               +"," + details[5]
               +"," + details[6]
-              +"," + details[7]
-              +"," + details[8]
-              +"," + details[9];
+              +"," + stats[0]
+              +"," + stats[1]
+              +"," + stats[2];
       return temp;
     }
 

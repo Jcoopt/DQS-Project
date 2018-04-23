@@ -103,9 +103,7 @@ public class adminMenu {
             case 9:
             Statistics studentStats = new Statistics();
             Statistics.menu(qb, sb);
-
             case 10:
-
             //8.Exit
             System.exit(0);
             break;
