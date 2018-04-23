@@ -113,13 +113,13 @@ public class adminMenu {
                 in.nextLine();
                 System.out.println("What should the question text say??");
                 String qText=in.nextLine();
-                System.out.println("What should Question A be?");
+                System.out.println("What should answer A be?");
                 String aAText= in.nextLine();
-                System.out.println("What should Question B be?");
+                System.out.println("What should answer B be?");
                 String aBText=in.nextLine();
-                System.out.println("What should Question C be?");
+                System.out.println("What should answer C be?");
                 String aCText=in.nextLine();
-                System.out.println("What should Question D be?");
+                System.out.println("What should answer D be?");
                 String aDText=in.nextLine();
                 qb.getQuestion(qToChange).EditQuestion(qText,aAText,aBText,aCText,aDText);
                 qb.saveBank();
