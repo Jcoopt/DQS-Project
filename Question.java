@@ -58,7 +58,13 @@ class Question implements Serializable {
   public String getQuestionText( ) {
     return details[0];
   }
-
+  public void EditQuestion(String text,String a1,String a2,String a3,String a4){
+      details[0] = text;
+      details[1] = a1;
+      details[2] = a2;
+      details[3] = a3;
+      details[4] = a4;
+  }
   public String getAnswer1( ) {
     return details[1];
   }

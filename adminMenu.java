@@ -27,7 +27,8 @@ public class adminMenu {
       System.out.println("7.Start quiz");
       System.out.println("8.Start quiz for students");
       System.out.println("9.View Statistics");
-      System.out.println("10.Exit");
+      System.out.println("10.Edit Question");
+      System.out.println("11.Exit");
       ;
 
 
@@ -88,8 +89,6 @@ public class adminMenu {
             //7.Start quiz
             System.out.println("-------------------------------");
             Scanner id = new Scanner(System.in);
-            System.out.println("Please enter the topic of the quiz");
-            String topic = id.nextLine();
             Quiz q = new Quiz();
             q.startQuiz(qb);
             System.out.println("-------------------------------");
@@ -104,6 +103,28 @@ public class adminMenu {
             Statistics studentStats = new Statistics();
             Statistics.menu(qb, sb);
             case 10:
+                System.out.println("Which question would ypu like to edit?");
+                int n = qb.length();
+
+                for ( int i = 0; i < n; ++i) {
+                    System.out.println("" + i + "." + qb.getQuestion(i).getQuestionText());
+                }
+                int qToChange = in.nextInt();
+                in.nextLine();
+                System.out.println("What should the question text say??");
+                String qText=in.nextLine();
+                System.out.println("What should Question A be?");
+                String aAText= in.nextLine();
+                System.out.println("What should Question B be?");
+                String aBText=in.nextLine();
+                System.out.println("What should Question C be?");
+                String aCText=in.nextLine();
+                System.out.println("What should Question D be?");
+                String aDText=in.nextLine();
+                qb.getQuestion(qToChange).EditQuestion(qText,aAText,aBText,aCText,aDText);
+                qb.saveBank();
+                break;
+            case 11:
             //8.Exit
             System.exit(0);
             break;

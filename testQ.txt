@@ -8,4 +8,4 @@ how many species of badger are there,12,5,8,11,4,badger,0,0,0
 how much does an average badger weigh,nine kg,seven kg,eleven kg,fifteen kg,1,badger,0,0,0
 what it the top recorded speed of a badger,19 mph,22 mph,25 mph,15 mph,1,badger,0,0,0
 what is a group of badgers referred to as,squad,mob,cete,herd,3,badger,0,0,0
-which type of badger is the largest,american,european,honey,tree,2,badger,0,0,0
+Which type of badger is the largest?,American,European,honey,tree,2,badger,0,0,0
