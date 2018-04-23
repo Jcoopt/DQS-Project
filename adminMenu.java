@@ -78,7 +78,7 @@ public class adminMenu {
 
             case 6:
             System.out.println("-------------------------------");
-            System.out.println("What is the name of the file you want to load?");
+            //System.out.println("What is the name of the file you want to load?");
             // String file_name = in.nextLine();
             String file_name = "testQ.txt";
             loadQuestions(file_name,qb);
@@ -95,6 +95,11 @@ public class adminMenu {
             break;
 
             case 8:
+                System.out.println("How many schools are attending?");
+                String schoolNumb = in.nextLine();
+                for ( int i = 0; i < schoolNumb; ++i) {
+                    System.out.println("" + i + "." + qb.getQuestion(i).getQuestionText());
+                }
                 studentMenu studentQuiz= new studentMenu();
                 studentQuiz.infoMenu();
                 break;
@@ -103,26 +108,36 @@ public class adminMenu {
             Statistics studentStats = new Statistics();
             Statistics.menu(qb, sb);
             case 10:
-                System.out.println("Which question would you like to edit?");
-                int n = qb.length();
+                System.out.println("Which question would you like to edit? Enter 0 to exit");
+                int numberOfQs = qb.length();
 
-                for ( int i = 0; i < n; ++i) {
+                for ( int i = 1; i < n; ++i) {
                     System.out.println("" + i + "." + qb.getQuestion(i).getQuestionText());
                 }
                 int qToChange = in.nextInt();
                 in.nextLine();
-                System.out.println("What should the question text say??");
-                String qText=in.nextLine();
-                System.out.println("What should answer A be?");
-                String aAText= in.nextLine();
-                System.out.println("What should answer B be?");
-                String aBText=in.nextLine();
-                System.out.println("What should answer C be?");
-                String aCText=in.nextLine();
-                System.out.println("What should answer D be?");
-                String aDText=in.nextLine();
-                qb.getQuestion(qToChange).EditQuestion(qText,aAText,aBText,aCText,aDText);
-                qb.saveBank();
+                if (qToChange==0){
+                    break;
+                }
+                else if(qToChange<=numberOfQs){
+                    System.out.println("What should the question text say??");
+                    String qText=in.nextLine();
+                    System.out.println("What should answer A be?");
+                    String aAText= in.nextLine();
+                    System.out.println("What should answer B be?");
+                    String aBText=in.nextLine();
+                    System.out.println("What should answer C be?");
+                    String aCText=in.nextLine();
+                    System.out.println("What should answer D be?");
+                    String aDText=in.nextLine();
+                    qb.getQuestion(qToChange).EditQuestion(qText,aAText,aBText,aCText,aDText);
+                    qb.saveBank();
+                }
+
+                    else{
+                    System.out.println("Input not valid");
+
+                }
                 break;
             case 11:
             //8.Exit
