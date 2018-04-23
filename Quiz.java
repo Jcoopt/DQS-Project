@@ -17,6 +17,10 @@ public class Quiz {
     for ( int i = 0; i < n; ++i) {
       displayQuestion(inBank.getQuestion(i));
       int answer = inputAnswer();
+      if ( answer == 8 ) {
+        inBank.getQuestion(i).inTimesExited(1);
+        break;
+      }
       if (checkAnswer(answer, Integer.parseInt(inBank.getQuestion(i).getCorrectAnswer()))) {
         Score += 1;
         System.out.println("correct");
@@ -33,6 +37,7 @@ public class Quiz {
 
   public static void displayQuestion( Question q ) {
     System.out.println("-------------------------------");
+    System.out.println("At any time enter '8' to exit.");
     System.out.println(q.getQuestionText());
     System.out.println(q.getAnswer1() + "  " + q.getAnswer2());
     System.out.println(q.getAnswer3() + "  " + q.getAnswer4());

@@ -10,7 +10,7 @@ public class Menu {
   public static void loadMenu( ) {
 
     QuestionBank qb = new QuestionBank();
-
+loadQuestions("testQ.txt",qb);
 
     while (true) {
       //display main menu
@@ -33,47 +33,61 @@ public class Menu {
 
             case 1:
             //1.Add new question
+            System.out.println("-------------------------------");
             QuestionEntry qe = new QuestionEntry();
             String questionInput[] = qe.newEntry();
             addQuestion(questionInput, qb);
+            System.out.println("-------------------------------");
             break;
 
             case 2:
             //2.Display all questions
+            System.out.println("-------------------------------");
             System.out.println(qb);
+            System.out.println("-------------------------------");
             break;
 
             case 3:
             //3.Search for students by topic
+            System.out.println("-------------------------------");
             System.out.println(getSearch(qb));
+            System.out.println("-------------------------------");
             break;
 
             case 4:
             //4.Delete student
+            System.out.println("-------------------------------");
             System.out.println("Enter number of record to Delete: ");
             qb.delete(in.nextInt());
+            System.out.println("-------------------------------");
             break;
 
             case 5:
-                qb.saveBank();
+            System.out.println("-------------------------------");
+            qb.saveBank();
+            System.out.println("-------------------------------");
             //5.Save Questions
 
             break;
 
             case 6:
-                System.out.println("What is the name of the file you want to load?");
-               // String file_name = in.nextLine();
-                String file_name = "testQ.txt";
-                loadQuestions(file_name,qb);
-                break;
+            System.out.println("-------------------------------");
+            System.out.println("What is the name of the file you want to load?");
+            // String file_name = in.nextLine();
+            String file_name = "testQ.txt";
+            loadQuestions(file_name,qb);
+            System.out.println("-------------------------------");
+            break;
 
             case 7:
             //7.Start quiz
+            System.out.println("-------------------------------");
             Scanner id = new Scanner(System.in);
             System.out.println("Please enter the topic of the quiz");
             String topic = id.nextLine();
             Quiz q = new Quiz();
             q.startQuiz(qb, topic);
+            System.out.println("-------------------------------");
             break;
 
             case 8:
