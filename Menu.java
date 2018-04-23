@@ -9,7 +9,7 @@ public class Menu {
 
   public static void loadMenu( ) {
 
-        QuestionBank qb = new QuestionBank();
+    QuestionBank qb = new QuestionBank();
 
 
     while (true) {

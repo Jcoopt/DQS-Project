@@ -1,1 +1,2 @@
-Whats the capital of somerset, Taunton, Wellington, Wivvy, Bridgewater, 1, capitals, 0, 0, 0
+whats the capital of Somerset,Taunton,Wellington,Bristol,Bridgewater,1,capitals,0,0,0
+which of these is a colour,dog,cat,yellow,apple,3,capitals,0,0,0
