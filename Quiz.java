@@ -16,6 +16,7 @@ public class Quiz {
 
     for ( int i = 0; i < n; ++i) {
       displayQuestion(inBank.getQuestion(i));
+      inBank.getQuestion(i).setTimesAsked(1);
       int answer = inputAnswer();
       if ( answer == 8 ) {
         inBank.getQuestion(i).inTimesExited(1);
@@ -23,11 +24,13 @@ public class Quiz {
       }
       if (checkAnswer(answer, Integer.parseInt(inBank.getQuestion(i).getCorrectAnswer()))) {
         Score += 1;
+          inBank.getQuestion(i).setTimesCorrect(1);
         System.out.println("correct");
         inBank.getQuestion(i).inCorrect(1);
       }
       else {
         System.out.println("incorrect");
+          inBank.getQuestion(i).setTimesWrong(1);
         inBank.getQuestion(i).inWrong(1);
       }
       QuestionCounter += 1;

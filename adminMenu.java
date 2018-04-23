@@ -99,11 +99,15 @@ public class adminMenu {
                 studentMenu studentQuiz= new studentMenu();
                 studentQuiz.infoMenu();
                 break;
+<<<<<<< HEAD
 
             case 9:
             Statistics studentStats = new Statistics();
             Statistics.menu(qb, sb);
             case 10:
+=======
+            case 0:
+>>>>>>> b1945cd5766214983798ceef6fdd4deb2476eee0
             //8.Exit
             System.exit(0);
             break;
