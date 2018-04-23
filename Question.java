@@ -79,7 +79,7 @@ class Question implements Serializable {
     }
 
     public String getTimesAsked( ) {
-        return details[7];
+        return (details[8] + details[9]);
     }
 
     public String getTimeCorrect( ) {
@@ -88,6 +88,17 @@ class Question implements Serializable {
     public String getTimesWrong( ) {
         return details[9];
     }
+
+    public void inCorrect( int modifier ) {
+      details[8] += modifier;
+    }
+
+    public void inWrong( int modifier ) {
+      details[9] += modifier;
+    }
+
+
+
 
     public String getQuestionFileSafe() {
       String  temp="";

@@ -72,8 +72,8 @@ while (true) {
         Scanner id = new Scanner(System.in);
         System.out.println("Please enter the topic of the quiz");
         String topic = id.nextLine();
-        Quiz q = new Quiz( qb, topic );
-        q.startQuiz();
+        Quiz q = new Quiz();
+        q.startQuiz(qb, topic);
         break;
 
         case 8:

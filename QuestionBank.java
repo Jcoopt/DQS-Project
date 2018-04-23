@@ -3,6 +3,7 @@
 //adapted from week 3 'PhoneBook' example
 //Used to store and manipulate a vector of student objects
 import java.util.Vector;
+import java.util.Collections;
 import java.io.*;
 public class QuestionBank implements Serializable {
 
@@ -49,6 +50,7 @@ public class QuestionBank implements Serializable {
 			questionBank.remove(position);
 		}
 		System.out.println("invalid address");
+		// System.out.println(qb);System.out.println(qb);
 	}
 
 	public String searchQuestions( int field, String pattern ) {
@@ -119,6 +121,10 @@ public class QuestionBank implements Serializable {
 
 	public int length( ) {
 		return questionBank.size();
+	}
+
+	public void shuffle( ) {
+		Collections.shuffle(questionBank);
 	}
 
 	}

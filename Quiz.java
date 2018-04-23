@@ -2,34 +2,28 @@
 //c1739307
 //Adapted from PhoneBookTest.java
 import java.util.Vector;
-import java.util.Collections;
 import java.util.Scanner;
 import java.io.*;
 
 public class Quiz {
+
   public static Vector<Question> qb = new Vector<Question>();
 
-  public Quiz( QuestionBank inBank, String topic ) {
 
-
-    for (int i = 0; i <= inBank.length(); ++i ) {
-      qb.add(inBank.getQuestion(i));
-    }
-
-    Collections.shuffle(qb);
+  public static void startQuiz( QuestionBank inBank, String topic ){
     int QuestionCounter = 0;
+    int Score = 0;
 
-
-
-
-
-  }
-
-  public static void startQuiz( ){
-
-    for (int i = 0; i <= qb.size(); ++i ) {
-      displayQuestion( qb.get(i) );
-      checkAnswer(inputAnswer(  ), Integer.parseInt(qb.get(i).getCorrectAnswer()));
+    for ( int i = 0; i == inBank.length(); ++i) {
+      displayQuestion(inBank.getQuestion(i));
+      if (checkAnswer(inputAnswer(), Integer.parseInt(inBank.getQuestion(i).getCorrectAnswer()))) {
+        Score += 1;
+        System.out.println("correct");
+        inBank.inCorrect(1);
+      } else {
+        System.out.println("incorrect");
+        inBank.inWrong(1);
+      }
 
     }
 
