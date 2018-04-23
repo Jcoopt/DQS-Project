@@ -37,7 +37,8 @@ public class Quiz_login {
 				System.out.println("ERROR, invalid credentials, please try again.");
 			}
 
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 
