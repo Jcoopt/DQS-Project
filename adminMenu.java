@@ -95,7 +95,7 @@ loadQuestions("testQ.txt",qb);
                 studentMenu studentQuiz= new studentMenu();
                 studentQuiz.infoMenu();
                 break;
-            case 9:
+            case 0:
             //8.Exit
             System.exit(0);
             break;

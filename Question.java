@@ -79,6 +79,16 @@ class Question implements Serializable {
     return details[5];
   }
 
+  public void setTimesAsked(int increase){
+      details[7]+=increase;
+  }
+  public void setTimesCorrect(int increase){
+        details[8]+=increase;
+    }
+    public void setTimesWrong(int increase){
+        details[9]+=increase;
+    }
+
   public String getTopic( ) {
         return details[6];
     }

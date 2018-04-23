@@ -12,16 +12,20 @@ public class studentMenu {
         System.out.println("Hi! What school are you from?");
         Scanner in = new Scanner(System.in);
         String school = in.nextLine();
-        loadMenu();
+        boolean running=true;
+        while (running) {
+            running=loadMenu();
+        }
+        System.exit(0);
         }
 
     }
 
-    public static void loadMenu( ) {
+    public static boolean loadMenu( ) {
 
         QuestionBank qb = new QuestionBank();
         adminMenu.loadQuestions("testQ.txt",qb);
-
+        boolean running=true;
         while (true) {
             //display main menu
 
@@ -34,7 +38,7 @@ public class studentMenu {
             switch (option) {
 
                 case 1:
-                    //7.Start quiz
+                    //1.Start quiz
                     System.out.println("-------------------------------");
                     Scanner id = new Scanner(System.in);
                     System.out.println("Please enter the topic of the quiz");
@@ -45,13 +49,15 @@ public class studentMenu {
                     break;
 
                 case 2:
-                    //8.Exit
-                    return;
+                    //2.Exit
+                    running=false;
+                    break;
 
 
-            }
+            }break;
 
         }
+        return running;
     }
 
 }
