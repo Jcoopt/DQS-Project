@@ -117,7 +117,7 @@ loadQuestions("testQ.txt",qb);
   public static void loadQuestions(String file_name, QuestionBank qb){
 
       try { //method adapted from lab and taught session exercises
-          System.out.println("Loading Questions");
+          System.out.println("Loading Questions\n\n");
           Scanner input_file_handler = new Scanner(new File(file_name));
 
           while (input_file_handler.hasNextLine()) {

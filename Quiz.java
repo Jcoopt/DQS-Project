@@ -39,8 +39,8 @@ public class Quiz {
     System.out.println("-------------------------------");
     System.out.println("At any time enter '8' to exit.");
     System.out.println(q.getQuestionText());
-    System.out.println(q.getAnswer1() + "  " + q.getAnswer2());
-    System.out.println(q.getAnswer3() + "  " + q.getAnswer4());
+    System.out.println("1)"+q.getAnswer1() + "  2)" + q.getAnswer2());
+    System.out.println("3)"+q.getAnswer3() + "  4)" + q.getAnswer4());
     System.out.println("-------------------------------");
   }
 
