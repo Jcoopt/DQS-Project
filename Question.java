@@ -7,6 +7,7 @@ import java.io.*;
 class Question implements Serializable {
 
   private String[] details = new String[10];
+  private int[] stats = new int[4];
   private Vector<Float> answerTimes;
 
   public Question(
@@ -31,6 +32,10 @@ class Question implements Serializable {
     details[7] = timesAsked;
     details[8] = timesCorrect;
     details[9] = timesWrong;
+    stats[0] = Integer.parseInt(timesAsked);
+    stats[1] = Integer.parseInt(timesCorrect);
+    stats[2] = Integer.parseInt(timesWrong);
+    stats[3] = 0;
 
   }
 
@@ -78,37 +83,45 @@ class Question implements Serializable {
         return details[6];
     }
 
-    public String getTimesAsked( ) {
-        return (details[8] + details[9]);
+    public int getTimesAsked( ) {
+        return (stats[0] + stats[1]);
     }
 
-    public String getTimeCorrect( ) {
-        return details[8];
+    public int getTimeCorrect( ) {
+        return stats[0];
     }
-    public String getTimesWrong( ) {
-        return details[9];
+    public int getTimesWrong( ) {
+        return stats[1];
     }
 
     public void inCorrect( int modifier ) {
-      details[8] += modifier;
+      stats[0] += modifier;
     }
 
     public void inWrong( int modifier ) {
-      details[9] += modifier;
+      stats[1] += modifier;
+    }
+
+    public int getTimesExited( ) {
+      return stats[2];
+    }
+
+    public void inTimesExited( int modifier ) {
+      stats[2] += modifier;
     }
 
     public String getQuestionFileSafe() {
       String  temp="";
       temp+= details[0]
-              +", " + details[1]
-              +", " + details[2]
-              +", " + details[3]
-              +", " + details[4]
-              +", " + details[5]
-              +", " + details[6]
-              +", " + details[7]
-              +", " + details[8]
-              +", " + details[9];
+              +"," + details[1]
+              +"," + details[2]
+              +"," + details[3]
+              +"," + details[4]
+              +"," + details[5]
+              +"," + details[6]
+              +"," + details[7]
+              +"," + details[8]
+              +"," + details[9];
       return temp;
     }
 
@@ -118,11 +131,12 @@ class Question implements Serializable {
     +"\n\t2." + details[2]
     +"\n\t3." + details[3]
     +"\n\t4." + details[4]
-    + "\nTopic: " + details[5]
-    + "\nCorrect answer" + details[6]
+    + "\nTopic: " + details[6]
+    + "\nCorrect answer" + details[5]
     + "\nTimes Asked: " + details[7]
     + "\nTimes Correct: " + details[8]
-    + "\nTimes Wrong: " + details[9]);
+    + "\nTimes Wrong: " + details[9]
+    + "\nTimes Exited on: " + stats[2]);
   }
 
 }
