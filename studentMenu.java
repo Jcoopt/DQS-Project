@@ -7,20 +7,22 @@ public class studentMenu {
 //Adapted from PhoneBookTest.java
 
 
-    public static void infoMenu(String[] schoolList  ) {
+    public static void infoMenu(String[] schoolList, String setTopic  ) {
         StudentBank sb = new StudentBank();
         loadStudents("students.txt",sb);
         while (true){
           Scanner in = new Scanner(System.in);
         System.out.println("Hi! What school are you from?");
         for (int i=0;i<schoolList.length;i++){
-            System.out.print((i+1)+schoolList[i]);
+            System.out.print((i+1)+"."+schoolList[i]+"\n");
         }
-        String school = in.nextLine();
+        int schoolSelection = in.nextInt();
+        in.nextLine();
+        String school =schoolList[schoolSelection-1];
 
         boolean running=true;
         while (running) {
-            running=loadMenu();
+            running=loadMenu(setTopic);
         }
         System.exit(0);
 
@@ -30,12 +32,12 @@ public class studentMenu {
         String number = in.nextLine();
         Student inStudent = new Student(number, school);
         sb.add(inStudent);
-        loadMenu();
+        loadMenu(setTopic);
         }
 
     }
 
-    public static boolean loadMenu() {
+    public static boolean loadMenu(String chosenTopic) {
 
         QuestionBank qb = new QuestionBank();
         adminMenu.loadQuestions("testQ.txt",qb);
@@ -49,17 +51,16 @@ public class studentMenu {
 
             Scanner in = new Scanner(System.in);
             int option = in.nextInt();
-            String monthString;
+
             switch (option) {
 
                 case 1:
                     //1.Start quiz
                     System.out.println("-------------------------------");
                     Scanner id = new Scanner(System.in);
-                    //System.out.println("Please enter the topic of the quiz");
-                    //String topic = id.nextLine();
+
                     Quiz q = new Quiz();
-                    q.startQuiz(qb);
+                    q.startQuiz(qb, chosenTopic);
                     System.out.println("-------------------------------");
                     break;
 

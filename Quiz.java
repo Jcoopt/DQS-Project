@@ -8,32 +8,34 @@ public class Quiz {
 
   public static Vector<Question> qb = new Vector<Question>();
 
-  public static void startQuiz( QuestionBank inBank){
+  public static void startQuiz( QuestionBank inBank,String setTopic ){
     int QuestionCounter = 0;
     int Score = 0;
-    System.out.println( inBank.length() );
+    //System.out.println( inBank.length() );
     int n = inBank.length();
 
     for ( int i = 0; i < n; ++i) {
-      displayQuestion(inBank.getQuestion(i));
-      inBank.getQuestion(i).setTimesAsked(1);
-      int answer = inputAnswer();
-      if ( answer == 8 ) {
-        inBank.getQuestion(i).inTimesExited(1);
-        break;
-      }
-      if (checkAnswer(answer, Integer.parseInt(inBank.getQuestion(i).getCorrectAnswer()))) {
-        Score += 1;
-          inBank.getQuestion(i).setTimesCorrect(1);
-        System.out.println("correct");
-        inBank.getQuestion(i).inCorrect(1);
-      }
-      else {
-        System.out.println("incorrect");
-          inBank.getQuestion(i).setTimesWrong(1);
-        inBank.getQuestion(i).inWrong(1);
-      }
-      QuestionCounter += 1;
+      if ((""+inBank.getQuestion(i).getTopic())==setTopic|| setTopic==""){
+        displayQuestion(inBank.getQuestion(i));
+        inBank.getQuestion(i).setTimesAsked(1);
+        int answer = inputAnswer();
+        if ( answer == 8 ) {
+          inBank.getQuestion(i).inTimesExited(1);
+          break;
+        }
+        if (checkAnswer(answer, Integer.parseInt(inBank.getQuestion(i).getCorrectAnswer()))) {
+          Score += 1;
+            inBank.getQuestion(i).setTimesCorrect(1);
+          System.out.println("correct");
+          inBank.getQuestion(i).inCorrect(1);
+        }
+        else {
+          System.out.println("incorrect");
+            inBank.getQuestion(i).setTimesWrong(1);
+          inBank.getQuestion(i).inWrong(1);
+        }
+        QuestionCounter += 1;
+    }
     }
     endQuiz( QuestionCounter, Score );
   }

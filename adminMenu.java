@@ -8,6 +8,7 @@ import java.io.*;
 public class adminMenu {
 
   public static void loadMenu( ) {
+      String chosenTopic;
     StudentBank sb = new StudentBank();
     loadStudents("students.txt",sb);
 
@@ -34,7 +35,7 @@ public class adminMenu {
 
         Scanner in = new Scanner(System.in);
         int option = in.nextInt();
-        String monthString;
+
         switch (option) {
 
             case 1:
@@ -90,21 +91,26 @@ public class adminMenu {
             System.out.println("-------------------------------");
             Scanner id = new Scanner(System.in);
             Quiz q = new Quiz();
-            q.startQuiz(qb);
+            System.out.println("What topic would you like the quiz to be? (leave blank for no set topic)");
+            chosenTopic = in.nextLine();
+            q.startQuiz(qb,chosenTopic);
             System.out.println("-------------------------------");
             break;
 
             case 8:
                 System.out.println("How many schools are attending?");
-                String schoolNumb = in.nextLine();
-                String[] schoolList=new String[Integer.parseInt(schoolNumb)];
-                for ( int i = 1; i <= Integer.parseInt(schoolNumb); ++i) {
+                int schoolNumb = in.nextInt();
+                in.nextLine();
+                String[] schoolList=new String[schoolNumb];
+                for ( int i = 1; i <= schoolNumb; ++i) {
                     System.out.println("Please give the name of school number "+i);
                     String schoolNameTemp = in.nextLine();
-                    schoolList[i-1]=schoolNameTemp;//GIVE THIS TO THE QUIZ THING
+                    schoolList[i-1]=schoolNameTemp;
                 }
+                System.out.println("What topic would you like the quiz to be? (leave blank for no set topic)");
+                chosenTopic = in.nextLine();
                 studentMenu studentQuiz= new studentMenu();
-                studentQuiz.infoMenu(schoolList);
+                studentQuiz.infoMenu(schoolList,chosenTopic);
                 break;
 
             case 9:
@@ -114,12 +120,12 @@ public class adminMenu {
                 System.out.println("Which question would you like to edit? Enter 0 to exit");
                 int numberOfQs = qb.length();
 
-                for ( int i = 1; i < numberOfQs; ++i) {
+                for ( int i = 1;  i < numberOfQs; ++i) {
                     System.out.println("" + i + "." + qb.getQuestion(i).getQuestionText());
                 }
                 int qToChange = in.nextInt();
                 in.nextLine();
-                if (qToChange==0){
+                if (qToChange==0||qToChange<1){
                     break;
                 }
                 else if(qToChange<=numberOfQs){
