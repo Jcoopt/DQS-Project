@@ -1,1 +1,11 @@
 whats the first number of the alphabet,a,b,c,d,1,capitals,0,0,0
+the canadian flag features a leaf from which tree,elm,oak,birch,maple,4,trivia,0,0,0
+what is the closest star to our sun,sirius,proxima centuri,alpha centuri,patrick star,3,trivia,0,0,0
+who was the us president at the end of world war two,theodore roosevelt,barack obama,harry truman,george bush,3,trivia,0,0,0
+what is the name of the longest side of a triangle,hypotenuse,hypertension,tangent,cosine,1,trivia,0,0,0
+what is the national sport of japan,baseball,sumo,sushi,judo,2,trivia,0,0,0
+how many species of badger are there,12,5,8,11,4,badger,0,0,0
+how much does an average badger weigh,nine kg,seven kg,eleven kg,fifteen kg,1,badger,0,0,0
+what it the top recorded speed of a badger,19 mph,22 mph,25 mph,15 mph,1,badger,0,0,0
+what is a group of badgers referred to as,squad,mob,cete,herd,3,badger,0,0,0
+which type of badger is the largest,american,european,honey,tree,2,badger,0,0,0
