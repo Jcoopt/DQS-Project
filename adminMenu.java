@@ -222,7 +222,7 @@ public class adminMenu {
   }
 
   public static void addStudent( String[] studentInput, StudentBank sb ) {
-    Student inStudent = new Student(studentInput[0], studentInput[1], studentInput[2]);
+    Student inStudent = new Student(studentInput[1], studentInput[2]);
     sb.add(inStudent);
 
   }

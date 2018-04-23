@@ -14,7 +14,7 @@ public class studentMenu {
           Scanner in = new Scanner(System.in);
         System.out.println("Hi! What school are you from?");
         for (int i=0;i<schoolList.length;i++){
-            System.out.print();
+            System.out.print((i+1)+schoolList[i]);
         }
         String school = in.nextLine();
 

@@ -10,13 +10,15 @@ public class Student
     {
       this.school = school;
       this.studentNumber = studentNumber;
-      this.name = name;
       this.questionsAnswered = 0;
       this.incorrectAnswers = 0;
     }
 
 
-
+    public String getSchool()
+  {
+    return this.school ;
+  }
     public String getStudentNumber()
     {
       return this.studentNumber ;

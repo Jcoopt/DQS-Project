@@ -64,7 +64,7 @@ public class Statistics implements Serializable
     Scanner in = new Scanner( System.in );
     for(int i = 0; i != sb.length(); i++)
     {
-      System.out.println(sb.get(i).getName() + sb.get(i).getStudentNumber() + i) ;
+      System.out.println(sb.get(i).getSchool() + sb.get(i).getStudentNumber() + i) ;
     }
     int choice = in.nextInt() ;
     try
