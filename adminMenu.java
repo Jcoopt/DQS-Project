@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.io.*;
 
-public class Menu {
+public class adminMenu {
 
   public static void loadMenu( ) {
 

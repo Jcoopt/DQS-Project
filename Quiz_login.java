@@ -31,8 +31,8 @@ public class Quiz_login {
 				Matcher pm = pp.matcher(password);
 				if (um.matches() && pm.matches()) {
 					System.out.println("Credentials accepted.");
-					Menu m = new Menu();
-					Menu.loadMenu();
+					adminMenu m = new adminMenu();
+					adminMenu.loadMenu();
 				} else {
 					System.out.println("ERROR, invalid credentials, please try again.");
 				}
