@@ -1,8 +1,6 @@
-//Joshua Tucker
-//Adapted from PhoneBookTest.java
+
 import java.util.Vector;
 import java.util.Scanner;
-import java.io.*;
 
 public class Quiz {
 
@@ -11,7 +9,6 @@ public class Quiz {
   public static void startQuiz( QuestionBank inBank,String setTopic ){
     int QuestionCounter = 0;
     int Score = 0;
-    //System.out.println( inBank.length() );
     int n = inBank.length();
 
     for ( int i = 0; i < n; ++i) {

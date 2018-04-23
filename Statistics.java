@@ -1,5 +1,4 @@
 import java.util.Scanner ;
-import java.util.Vector ;
 import java.io.*;
 
 
@@ -59,7 +58,7 @@ public class Statistics implements Serializable
 
     }
 
-  public static void studentStats(StudentBank sb){
+  public static void studentStats(StudentBank sb){//displays Statistics specifically about student performance
     System.out.println("Choose which student to view data of : ") ;
     Scanner in = new Scanner( System.in );
     for(int i = 0; i != sb.length(); i++)

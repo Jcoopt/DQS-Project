@@ -1,7 +1,3 @@
-//Joshua Tucker
-//c1739307
-//Adapted from PhoneBookTest.java
-import java.util.Arrays;
 import java.util.Scanner;
 import java.io.*;
 
@@ -30,7 +26,6 @@ public class adminMenu {
       System.out.println("9.View Statistics");
       System.out.println("10.Edit Question");
       System.out.println("11.Exit");
-      ;
 
 
         Scanner in = new Scanner(System.in);
@@ -89,7 +84,7 @@ public class adminMenu {
             case 7:
             //7.Start quiz
             System.out.println("-------------------------------");
-            Scanner id = new Scanner(System.in);
+
             Quiz q = new Quiz();
             System.out.println("What topic would you like the quiz to be? (leave blank for no set topic)");
             chosenTopic = in.nextLine();

@@ -2,10 +2,6 @@ import java.io.File;
 import java.util.Scanner;
 
 public class studentMenu {
-    //Joshua Tucker
-//c1739307
-//Adapted from PhoneBookTest.java
-
 
     public static void infoMenu(String[] schoolList, String setTopic  ) {
         StudentBank sb = new StudentBank();
@@ -78,7 +74,7 @@ public class studentMenu {
 
     public static void loadStudents(String file_name, StudentBank sb){
 
-        try { //method adapted from lab and taught session exercises
+        try {
             System.out.println("Loading Questions\n\n");
             Scanner input_file_handler = new Scanner(new File(file_name));
 
@@ -87,10 +83,6 @@ public class studentMenu {
                 String line_from_file = input_file_handler.nextLine();
                 String[] split_line = line_from_file.split(",");
                 addStudent(split_line, sb);
-               // System.out.println("file read");
-
-               /*System.out.println(Arrays.asList(split_line));
-                StudentsList.add(new Student(Arrays.asList(split_line)));*/
             }
             input_file_handler.close();
         } catch (Exception e) {

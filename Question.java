@@ -1,7 +1,4 @@
-//Joshua Tucker
-//c1739307
-//Adapted from PhoneBook.java from Week3
-//Holds and returns data on a single student
+
 import java.util.Vector;
 import java.io.*;
 class Question implements Serializable {
@@ -39,7 +36,7 @@ class Question implements Serializable {
 
   }
 
-  public Float getAvTime( ) {
+  public Float getAvTime( ) { // for recording average times (not functional in prototype)
   Float avAnswerTime = 0.0F;
     for (int i = 0; i >= answerTimes.size(); ++i) {
       avAnswerTime += answerTimes.get(i);
@@ -47,18 +44,19 @@ class Question implements Serializable {
     return (avAnswerTime / answerTimes.size());
   }
 
-  public void updateTime( Float newTime ) {
+  public void updateTime( Float newTime ) {// for recording average times (not functional in prototype)
     answerTimes.add(newTime);
   }
 
-  public String getDetail( int index ) {
+  public String getDetail( int index ) {// getter for parts of the question as stored
     return details[index];
   }
 
-  public String getQuestionText( ) {
+  public String getQuestionText( ) { // getter for the actual text of the question
     return details[0];
   }
   public void EditQuestion(String text,String a1,String a2,String a3,String a4,String correct){
+      // updates a question
       details[0] = text;
       details[1] = a1;
       details[2] = a2;
@@ -127,7 +125,7 @@ class Question implements Serializable {
       stats[2] += modifier;
     }
 
-    public String getQuestionFileSafe() {
+    public String getQuestionFileSafe() { //returns the question in a format for saving
       String  temp="";
       temp+= details[0]
               +"," + details[1]

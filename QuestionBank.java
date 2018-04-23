@@ -1,7 +1,3 @@
-//Joshua Tucker
-//c1739307
-//adapted from week 3 'PhoneBook' example
-//Used to store and manipulate a vector of student objects
 import java.util.Vector;
 import java.util.Collections;
 import java.io.*;
@@ -123,7 +119,7 @@ public class QuestionBank implements Serializable {
 		return questionBank.size();
 	}
 
-	public void shuffle( ) {
+	public void shuffle( ) { // for creating random questions (not implemented in the prototype)
 		Collections.shuffle(questionBank);
 	}
 

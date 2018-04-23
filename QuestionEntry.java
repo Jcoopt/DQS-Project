@@ -34,7 +34,7 @@ public class QuestionEntry {
 
     }
 
-    //returns a String array of vald entries in the correct order
+    //returns a String array of valid entries in the correct order
     return quesitonInput;
 
   }
